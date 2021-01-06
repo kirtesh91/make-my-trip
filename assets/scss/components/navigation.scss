@@ -1,0 +1,51 @@
+.navigation {
+    background-color: white;
+    position: relative;
+    padding: map-get($sizing-lg, sm) 0;
+
+    &.transparent {
+        background-color: transparent;
+        color: white;
+    }
+
+    &.shadow {
+        @include box-shadow(0 6px 12px rgba(0, 0, 0, 0.05));
+    }
+
+    .logo {
+        height: map-get($sizing, xl);
+    }
+    .container {
+        @include flex(space-between);
+    }
+
+    .booking-modes {
+        @include flex();
+        color: map-get($colors, "black");
+
+        .option {
+            @include flex-column();
+            cursor: pointer;
+            padding: 0 map-get($sizing, xs);
+            margin: 0 map-get($sizing, sm);
+
+            .icon {
+                @include dimension(map-get($sizing, base));
+                margin-bottom: map-get($sizing, xs);
+            }
+
+            span {
+                @include font-size(11px);
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .nav-items {
+        .nav-item {
+            cursor: pointer;
+            @include font-size(14px);
+            margin: 0 map-get($sizing, xs);
+        }
+    }
+}

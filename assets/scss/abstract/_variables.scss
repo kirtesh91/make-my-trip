@@ -1,0 +1,46 @@
+@use "sass:map";
+
+// ***** Colors ***** //
+
+$colors: (
+    "darkwhite": #eaeaea,
+    "midwhite": #f8f8f8,
+    "white": #ffffff,
+    "black": #000000,
+    "gray": #b3b3b3,
+    "midgray": #888888,
+    "darkgray": #666666,
+    "success": #1db954,
+    "google": #4285f4,
+    "facebook": #3b5998,
+    "primary": #008cff,
+    "secondary": #051322,
+    "danger": #d0021b,
+);
+
+// ***** Base Sizing ***** //
+
+$components: (
+    sidebar-width: 232px,
+    topbar-height: 60px,
+    songbar-height: 90px,
+);
+
+$sizing: (
+    base: 24px,
+    xxs: 4px,
+    xs: 8px,
+    sm: 16px,
+    md: 24px,
+    lg: 32px,
+    xl: 40px,
+    xxl: 48px,
+    xxxl: 56px,
+);
+
+$sizing-lg: (
+    xs: 6px,
+    sm: 12px,
+    base: 24px,
+    lg: 36px,
+);

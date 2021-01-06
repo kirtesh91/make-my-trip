@@ -1,0 +1,51 @@
+header.listing-header {
+    min-height: 216px;
+    position: relative;
+    padding: map-get($sizing, lg) 0;
+    background-color: #f8f8f8;
+
+    .breadcrumb {
+        @include font-size(12px);
+        font-weight: 700;
+
+        i {
+            @include font-size(8px);
+            margin: 0 map-get($sizing, xxs);
+            color: map-get($colors, "gray");
+        }
+
+        a {
+            color: map-get($colors, primary);
+        }
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        margin-top: 64px;
+
+        h1.title {
+            @include poppins(700);
+            @include font-size(34px);
+            margin-bottom: map-get($sizing, sm);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+        }
+
+        .subtitle {
+            @include font-size(14px);
+        }
+    }
+
+    .cover {
+        @include absolute(top 0 right 0 bottom 0);
+        @include dimension(35%, 100%);
+        min-width: 624px;
+        z-index: 0;
+
+        img {
+            @include dimension(100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 12% 100%);
+            @include object-fit();
+        }
+    }
+}

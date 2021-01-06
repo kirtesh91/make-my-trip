@@ -1,0 +1,167 @@
+.hero {
+    background-image: linear-gradient(
+        to bottom,
+        map-get($colors, secondary),
+        #15457c
+    );
+
+    .booking-section {
+        padding: map-get($sizing, xxxl) 0 map-get($sizing, xxl) 0;
+
+        .booking-container {
+            @include relative();
+            padding: map-get($sizing, xl) map-get($sizing, base);
+            background-color: white;
+            border-radius: map-get($sizing-lg, sm);
+        }
+
+        .booking-modes {
+            @include flex();
+            background-color: white;
+            @include absolute(top 0 left 50%);
+            transform: translate(-50%, -50%);
+            padding: 0 map-get($sizing, lg);
+            border-radius: map-get($sizing-lg, sm);
+            @include box-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+
+            .option {
+                @include flex-column();
+                position: relative;
+                cursor: pointer;
+                padding: map-get($sizing, sm) map-get($sizing, xs);
+                margin: 0 map-get($sizing, sm);
+
+                .icon {
+                    @include dimension(map-get($sizing, lg));
+                    margin-bottom: map-get($sizing-lg, sm);
+                }
+
+                span {
+                    @include font-size(12px);
+                    white-space: nowrap;
+                }
+
+                &.active {
+                    span {
+                        font-weight: 500;
+                        color: map-get($colors, primary);
+                    }
+
+                    &::after {
+                        content: "";
+                        @include absolute(bottom 0 left 50%);
+                        @include dimension(32px, 2px);
+                        transform: translateX(-50%);
+                        border-radius: 4px;
+                        opacity: 0.5;
+                        background-color: map-get($colors, primary);
+                    }
+                }
+            }
+        }
+
+        .searcher {
+            padding: map-get($sizing, xl) 0;
+            .content {
+                @include flex(flex-start);
+                flex-wrap: nowrap;
+                border: 1px solid map-get($colors, darkwhite);
+                border-radius: map-get($sizing-lg, sm);
+
+                .input-box {
+                    padding: 10px 20px;
+                    position: relative;
+                    @include flex-column();
+                    align-items: flex-start;
+                    min-width: 0;
+                    cursor: pointer;
+                    @include transition();
+                    border-right: 1px solid map-get($colors, darkwhite);
+
+                    span.title {
+                        @include poppins();
+                        color: map-get($colors, "darkgray");
+                        text-transform: uppercase;
+                    }
+
+                    span.value {
+                        @include poppins(700);
+                        @include font-size(30px);
+
+                        bdi {
+                            @include poppins(400);
+                            @include font-size(20px);
+                        }
+                    }
+
+                    p.info {
+                        @include poppins();
+                        color: map-get($colors, "darkgray");
+                        @include font-size(13px);
+                    }
+
+                    p, span {
+                        width: 100%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+
+                    span {
+                        text-overflow: clip;
+                    }
+
+                    &:first-child {
+                        border-radius: map-get($sizing-lg, sm) 0 0
+                            map-get($sizing-lg, sm);
+                    }
+
+                    &:last-child {
+                        border-radius: 0 map-get($sizing-lg, sm)
+                            map-get($sizing-lg, sm) 0;
+                    }
+
+                    &.city-box {
+                        flex: 4;
+
+                        .selectpicker {
+                            display: none;
+                            @include absolute(top map-get($sizing, xl) left 0);
+                            z-index: 2;
+                            width: 100%;
+                        }
+                    }
+                    &.date-box {
+                        flex: 2;
+                        .datepicker-container {
+                            display: none;
+                            z-index: 2;
+                            @include absolute(top map-get($sizing, xl) left 0);
+                        }
+                        &.return-date-box {
+                            .datepicker-container {
+                                left: unset;
+                                right: 0;
+                            }
+                        }
+                    }
+
+                    &.travellers-box {
+                        flex: 3;
+                    }
+
+                    &:hover {
+                        background-color: rgba(
+                            map-get($colors, primary),
+                            0.075
+                        );
+
+                        .title {
+                            color: map-get($colors, primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

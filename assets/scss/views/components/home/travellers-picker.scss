@@ -1,0 +1,22 @@
+.travellers-picker {
+    z-index: 2;
+    cursor: unset;
+    display: none;
+    background-color: white;
+    @include absolute(top map-get($sizing, xl) right 0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: map-get($sizing-lg, xs);
+    padding: map-get($sizing-lg, sm) map-get($sizing-lg, base);
+
+    .section {
+        margin-bottom: map-get($sizing, sm);
+
+        .name {
+            @include font-size(12px);
+            text-transform: uppercase;
+            color: map-get($colors, midgray);
+            font-weight: 700;
+            margin-bottom: map-get($sizing-lg, sm);
+        }
+    }
+}

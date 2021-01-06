@@ -1,0 +1,21 @@
+.badges-group {
+    @include flex(flex-start);
+
+    .badge {
+        margin-right: map-get($sizing, xs);
+    }
+}
+
+.badge {
+    @include font-size(11px);
+    @include poppins(500);
+    color: map-get($colors, "darkgray");
+    background-color: map-get($colors, darkwhite);
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    &.danger {
+        background-color: map-get($colors, danger);
+        color: white;
+    }
+}

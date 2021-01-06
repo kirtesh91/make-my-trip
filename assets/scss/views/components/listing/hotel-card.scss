@@ -1,0 +1,76 @@
+.hotel-card {
+    border-radius: map-get($sizing-lg, xs);
+    border: 1px solid #e8e8e8;
+    margin-bottom: map-get($sizing, sm);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.045);
+    @include flex(flex-start, stretch);
+    min-height: 224px;
+    overflow: hidden;
+
+    .cover {
+        width: 224px;
+
+        img {
+            @include dimension(100%);
+            @include object-fit();
+        }
+    }
+
+    .body {
+        padding: map-get($sizing, sm);
+        flex: 1;
+        min-width: 0;
+
+        .title {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include font-size(24px);
+            @include poppins(600);
+        }
+
+        .location {
+            text-transform: uppercase;
+            @include poppins(600);
+            color: map-get($colors, midgray);
+            @include font-size(12px);
+        }
+
+        .ratings {
+            margin: map-get($sizing, sm) 0;
+
+            i {
+                @include font-size(14px);
+                color: map-get($colors, "gray");
+
+                &.active {
+                    color: map-get($colors, primary);
+                }
+            }
+        }
+    }
+
+    .pricing-details {
+        width: 186px;
+        padding: map-get($sizing, sm);
+        background-color: map-get($colors, midwhite);
+        border-left: 1px solid map-get($colors, darkwhite);
+        @include flex-column(flex-end, flex-end);
+
+        .badge {
+            border-radius: 16px 8px 8px 16px;
+        }
+
+        .pre-price {
+            @include font-size(17px);
+            margin-top: map-get($sizing, sm);
+            text-decoration: line-through;
+            color: map-get($colors, midgray);
+        }
+
+        .price {
+            @include font-size(24px);
+            @include poppins(700);
+        }
+    }
+}

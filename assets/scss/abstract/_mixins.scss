@@ -1,0 +1,239 @@
+@mixin dimension($width, $height: $width) {
+    width: $width;
+    height: $height;
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+
+/**
+    Positioning
+ */
+
+@mixin position($position, $args) {
+    @each $o in top right bottom left {
+        $i: index($args, $o);
+
+        @if $i and
+            $i +
+            1
+            <=length($args) and
+            type-of(nth($args, $i + 1))
+            ==number
+        {
+            #{$o}: nth($args, $i + 1);
+        }
+    }
+
+    position: $position;
+}
+
+@mixin absolute($args: "") {
+    @include position(absolute, $args);
+}
+
+@mixin fixed($args: "") {
+    @include position(fixed, $args);
+}
+
+@mixin relative($args: "") {
+    @include position(relative, $args);
+}
+
+/**
+    Font Size
+ */
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@mixin icon($size) {
+    @include dimension($size);
+}
+
+@mixin flex-maker($justify-content: center, $align-items: center) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin flex($justify-content: center, $align-items: center) {
+    @include flex-maker($justify-content, $align-items);
+}
+
+@mixin flex-column($align-items: center, $justify-content: center) {
+    @include flex-maker($justify-content, $align-items);
+    flex-direction: column;
+}
+
+@mixin object-fit($object-position: center, $object-fit: cover) {
+    object-position: $object-position;
+    object-fit: $object-fit;
+    -o-object-position: $object-position;
+    -o-object-fit: $object-fit;
+}
+
+@mixin background-center($position: center, $size: cover) {
+    background-position: $position;
+    background-size: $size;
+}
+
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow !important;
+    -moz-box-shadow: $shadow !important;
+    box-shadow: $shadow !important;
+}
+
+@mixin transition($duration: 0.2s) {
+    transition: all $duration ease;
+}
+
+@mixin cover-overlay {
+    @include absolute(top 0, left 0);
+    @include dimension(100%, 100%);
+}
+
+@mixin default-shadow {
+    @include box-shadow(0 0px 7.5px 0 rgba(0, 0, 0, 0.04));
+}
+
+@mixin text-gradient($gradient) {
+    background: -webkit-linear-gradient($gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin no-scrollbar {
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+}
+
+@mixin mini-scrollbar {
+    &::-webkit-scrollbar {
+        height: 4px;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #aaa;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: #fff;
+    }
+}
+
+@mixin placeholder {
+    &.placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+    }
+
+    &::-moz-placeholder {
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    animation: $animation;
+}
+
+@mixin font-weight($weight: 500) {
+    @if $weight == 500 {
+        font-family: "Gilroy Medium", sans-serif;
+        letter-spacing: 0.5px;
+    } @else if $weight == 700 {
+        font-family: "Gilroy Bold", sans-serif;
+    } @else if $weight == 900 {
+        font-family: "Gilroy Heavy", sans-serif;
+    } @else if $weight == 400 {
+        font-family: "Gilroy Regular", sans-serif;
+    } @else if $weight == 100 {
+        font-family: "Gilroy Light", sans-serif;
+    }
+}
+
+@mixin range-track {
+    &::-webkit-slider-runnable-track {
+        @content;
+    }
+    &::-moz-range-track {
+        @content;
+    }
+    &::-ms-track {
+        @content;
+    }
+}
+
+@mixin range-thumb {
+    &::-webkit-slider-thumb {
+        @content;
+    }
+    &::-moz-range-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+    }
+}
+
+@mixin range-progress {
+    &::-moz-range-progress {
+        @content;
+    }
+}
+
+@mixin poppins($font-weight: 400) {
+    font-family: "Poppins", sans-serif;
+    font-weight: $font-weight;
+}

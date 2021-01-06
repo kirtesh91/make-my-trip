@@ -1,0 +1,48 @@
+.selectpicker {
+    background-color: #ffffff;
+    border-radius: map-get($sizing-lg, xs);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 316px;
+
+    input {
+        padding: map-get($sizing-lg, sm);
+        border: none;
+        width: 100%;
+        border-radius: map-get($sizing-lg, xs) map-get($sizing-lg, xs) 0 0;
+        border-bottom: 1px solid map-get($colors, darkwhite);
+    }
+
+    ul.options {
+        padding: map-get($sizing-lg, xs) 0;
+        max-height: 316px;
+        overflow-y: auto;
+
+        li {
+            list-style: none;
+
+            .option {
+                padding: map-get($sizing-lg, xs) map-get($sizing-lg, sm);
+                @include flex(flex-start);
+                cursor: pointer;
+
+                &:hover {
+                    background-color: map-get($colors, midwhite);
+                }
+
+                .detail {
+                    margin-top: map-get($sizing, xxs);
+                    @include font-size(12px);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .extra {
+                    @include poppins(500);
+                    color: map-get($colors, "gray");
+                    margin-left: map-get($sizing, base);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+@mixin datepicker-icon($icon) {
+    content: $icon;
+    color: map-get($colors, primary);
+    font-family: "Font Awesome 5 Free";
+    @include absolute(top 50% left 50%);
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+}
+
+.datepicker-container {
+    background-color: map-get($colors, "white");
+    border-radius: map-get($sizing-lg, xs);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 386px;
+
+    .ui-datepicker {
+        border: none;
+        width: unset;
+        padding: 0;
+        font-family: inherit;
+
+        .ui-datepicker-header {
+            background: transparent;
+            border: none;
+            margin: map-get($sizing, xs) 0;
+            border-radius: 0;
+
+            .ui-datepicker-prev {
+                span {
+                    display: none;
+                }
+                &::after {
+                    @include datepicker-icon("\f30a");
+                }
+                &.ui-state-hover {
+                    background: transparent;
+                    border: 0;
+                    opacity: 0.8;
+                }
+            }
+
+            .ui-datepicker-next {
+                span {
+                    display: none;
+                }
+                &::after {
+                    @include datepicker-icon("\f30b");
+                }
+                &.ui-state-hover {
+                    background: transparent;
+                    border-color: transparent;
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .ui-datepicker-calendar {
+            th {
+                @include poppins(500);
+                @include font-size(12px);
+                color: map-get($colors, midgray);
+                text-transform: uppercase;
+            }
+
+            .ui-state-default {
+                border: none;
+                padding: map-get($sizing, xs) 2px;
+                background: transparent;
+                text-align: center;
+                border-radius: map-get($sizing-lg, xs);
+
+                &.ui-state-hover {
+                    background-color: rgba(map-get($colors, primary), 0.075);
+                }
+                &.ui-state-active {
+                    background-color: map-get($colors, primary);
+                    color: white;
+                }
+            }
+        }
+    }
+}

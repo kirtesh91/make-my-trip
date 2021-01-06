@@ -1,0 +1,36 @@
+.listpicker {
+    ul {
+        list-style: none;
+        display: inline-flex;
+        @include font-size(12px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: map-get($sizing, xxs) 0;
+        border-radius: map-get($sizing-lg, xs);
+
+        li {
+            padding: map-get($sizing, xs) map-get($sizing, sm);
+            border-radius: map-get($sizing-lg, xs);
+            margin: 0 map-get($sizing, xxs);
+            cursor: pointer;
+
+            &:hover {
+                background-color: map-get($colors, midwhite);
+                font-weight: 700;
+            }
+            &.active {
+                background-color: map-get($colors, primary);
+                color: white;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &.normal-active {
+        li {
+            &:hover,
+            &.active {
+                font-weight: normal;
+            }
+        }
+    }
+}

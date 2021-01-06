@@ -1,0 +1,96 @@
+body.auth {
+    background-color: map-get($colors, midwhite);
+    @include flex();
+}
+
+.auth-container {
+    margin: map-get($sizing, lg) 0;
+    border-radius: map-get($sizing, sm);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    background: map-get($colors, "white");
+
+    .hero {
+        position: relative;
+        background-image: url("../images/map.jpg");
+
+        &::before {
+            content: "";
+            opacity: 0.3;
+            @include absolute(top 0 left 0 right 0 bottom 0);
+            background-image: linear-gradient(
+                135deg,
+                #005daa,
+                map-get($colors, primary)
+            );
+        }
+    }
+
+    .content {
+        min-height: 524px;
+        @include flex-column(stretch);
+        padding: map-get($sizing, base);
+
+        .brand {
+            float: right;
+            text-align: right;
+
+            .logo {
+                margin-left: auto;
+                height: map-get($sizing, lg);
+            }
+        }
+
+        .form {
+            width: 100%;
+            margin: map-get($sizing, sm) 0;
+
+            .title {
+                text-transform: uppercase;
+                color: map-get($colors, primary);
+                @include font-size(20px);
+                @include poppins(500);
+                margin-bottom: map-get($sizing, lg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            @include font-size(12px);
+
+            a {
+                margin: 0 map-get($sizing, xxs);
+            }
+        }
+    }
+
+    .form-input {
+        position: relative;
+        margin-bottom: map-get($sizing-lg, sm);
+
+        input {
+            border: 0;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.095);
+            padding: map-get($sizing-lg, sm) map-get($sizing-lg, sm)
+                map-get($sizing-lg, sm) 28px;
+        }
+
+        i {
+            @include absolute(top 50% left 0);
+            @include font-size(12px);
+            transform: translateY(-50%);
+            color: #cccccc;
+        }
+
+        button[type="submit"] {
+            margin-top: map-get($sizing, lg);
+            padding: map-get($sizing-lg, sm);
+            border-radius: map-get($sizing, base);
+            text-align: center;
+            width: 100%;
+            background-color: map-get($colors, primary);
+            color: map-get($colors, "white");
+        }
+    }
+}

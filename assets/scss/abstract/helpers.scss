@@ -1,0 +1,53 @@
+.flex-1 {
+    flex: 1 !important;
+    min-width: 0;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.section-gap {
+    margin-top: map-get($sizing, lg);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.font-10 {
+    @include font-size(10px);
+}
+.font-11 {
+    @include font-size(11px);
+}
+.font-12 {
+    @include font-size(12px);
+}
+.font-14 {
+    @include font-size(14px);
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+@each $name, $size in $sizing {
+    .ml-#{$name} {
+        margin-left: $size;
+    }
+}
+
+@each $name, $color in $colors {
+    .color-#{$name}-color {
+        color: $color;
+    }
+}
+
+.text-right {
+    text-align: right !important;
+}

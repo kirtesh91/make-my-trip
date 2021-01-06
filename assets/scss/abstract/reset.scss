@@ -1,0 +1,63 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+html {
+    min-height: 100vh;
+    min-width: 1024px;
+    font-size: 1rem;
+}
+
+body,
+html,
+input,
+button {
+    font-family: "Quicksand", sans-serif;
+}
+
+::-moz-selection {
+    color: #333333;
+    background: white;
+    border-radius: 2px;
+}
+
+::selection {
+    color: #333333;
+    background: white;
+    border-radius: 2px;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: map-get($colors, midwhite);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    line-height: unset;
+    letter-spacing: unset;
+}

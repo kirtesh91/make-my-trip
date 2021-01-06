@@ -1,0 +1,15 @@
+.button {
+    padding: map-get($sizing, xs) map-get($sizing, base);
+    @include font-size(12px);
+    border-radius: map-get($sizing-lg, xs);
+    background-color: map-get($colors, darkwhite);
+
+    &.primary {
+        background-color: map-get($colors, primary);
+        color: white;
+    }
+
+    &.round {
+        border-radius: 16px;
+    }
+}
