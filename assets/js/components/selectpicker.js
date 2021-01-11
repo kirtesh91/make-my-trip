@@ -1,6 +1,17 @@
 (function ($) {
     const DOM = {
-        option: (data) => {
+        optionPlain: (data) => {
+            return `<li
+                        role="option"
+                        data-id="${data.id}"
+                        data-type="flight-city"
+                    >
+                        <div class="option">
+                                  ${data.name}          
+                        </div>
+                    </li>`;
+        },
+        option: (data, extractor) => {
             return `<li
                         role="option"
                         data-id="${data.id}"
@@ -9,13 +20,15 @@
                         <div class="option">
                             <div class="flex-1">
                                 <p class="name">
-                                    ${data.name}, ${data.location}
+                                    ${extractor(data).name}
                                 </p>
                                 <p class="detail">
-                                    ${data.airport}
+                                    ${extractor(data).detail}
                                 </p>
                             </div>
-                            <div class="extra">${data.code}</div>
+                            <div class="extra">
+                                    ${extractor(data).extra}
+                            </div>
                         </div>
                     </li>`;
         },
@@ -28,15 +41,22 @@
         let settings = $.extend(
             {
                 data: [],
+                extractor: () => {},
+                plain: false,
             },
             options
         );
-        const { data } = settings;
+        const { data, extractor, plain } = settings;
 
         const Render = () => {
             let Options = "";
 
-            data.forEach((data) => (Options += DOM.option(data)));
+            data.forEach(
+                (data) =>
+                    (Options += plain
+                        ? DOM.optionPlain(data)
+                        : DOM.option(data, extractor))
+            );
 
             $(this).html(`
                 <input

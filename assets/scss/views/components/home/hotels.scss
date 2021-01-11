@@ -1,0 +1,44 @@
+.booking-section.hotels {
+    .input-box {
+        &.city-box {
+            flex: 5;
+        }
+        &.date-box {
+            flex: 1.5;
+
+            &.check-out-date-box {
+                .datepicker-container {
+                    left: unset;
+                    right: 0;
+                }
+            }
+        }
+
+        &.rooms-guests-box {
+            flex: 2.5;
+
+            .hero-listpicker-group {
+                display: none;
+            }
+
+            .room {
+                border-bottom: 1px solid map-get($colors, "darkwhite");
+                margin-bottom: map-get($sizing-lg, sm);
+
+                .title {
+                    @include poppins(400);
+                    color: #222222 !important;
+                    text-transform: uppercase;
+                    @include font-size(14px);
+                    margin-bottom: map-get($sizing-lg, sm);
+
+                    i {
+                        margin-left: map-get($sizing, xs);
+                        @include font-size(12px);
+                        color: map-get($colors, "gray") !important;
+                    }
+                }
+            }
+        }
+    }
+}

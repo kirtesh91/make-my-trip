@@ -50,4 +50,75 @@ const DATA = {
             code: "PNQ",
         },
     ],
+    hotelLocations: [
+        {
+            id: 1,
+            name: "Delhi",
+            country: "India",
+            info: "2088 Properties",
+            type: "City",
+        },
+        {
+            id: 2,
+            name: "Bangkok",
+            country: "Thailand",
+            info: "1656 Properties",
+            type: "City",
+        },
+        {
+            id: 3,
+            name: "Singapore",
+            country: "Singapore",
+            info: "887 Properties",
+            type: "City",
+        },
+        {
+            id: 4,
+            name: "Mumbai",
+            country: "India",
+            info: "1214 Properties",
+            type: "City",
+        },
+        {
+            id: 5,
+            name: "Bengaluru",
+            country: "India",
+            info: "170 Properties",
+            type: "City",
+        },
+        {
+            id: 6,
+            name: "Goa",
+            country: "India",
+            info: "3761 Properties",
+            type: "City",
+        },
+    ],
+    trainClasses: [
+        {
+            id: 1,
+            name: "All Class",
+            val: "ALL",
+        },
+        {
+            id: 2,
+            name: "Sleeper Class",
+            val: "SL",
+        },
+        {
+            id: 3,
+            name: "Third AC",
+            val: "3A",
+        },
+        {
+            id: 4,
+            name: "Second AC",
+            val: "2A",
+        },
+        {
+            id: 5,
+            name: "First AC",
+            val: "1A",
+        },
+    ],
 };

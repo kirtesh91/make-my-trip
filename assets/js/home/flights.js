@@ -4,8 +4,8 @@ $(function () {
     const details = {
         from: null,
         to: null,
-        departure: null,
-        return: null,
+        departure: new Date(),
+        return: new Date(),
         travellers: {
             class: "E",
             adults: 1,
@@ -55,7 +55,8 @@ $(function () {
         if (type === "departure") {
             if (details.return) {
                 if (details.return.getTime() < date.getTime()) {
-                    $("#return-datepicker").setDate(date);
+                    $("#return-datepicker").datepicker("setDate", date);
+                    onDateChange(date, "return");
                 }
             }
 
@@ -98,6 +99,7 @@ $(function () {
             data: [
                 { name: "0", val: 0, active: true },
                 { name: "1", val: 1 },
+                { name: "2", val: 2 },
                 { name: "3", val: 3 },
                 { name: "4", val: 4 },
                 { name: "5", val: 5 },
@@ -120,15 +122,25 @@ $(function () {
             $(`#${target}`).text(current.name);
         });
 
+    const dataExtractor = (data) => {
+        return {
+            name: `${data.name}, ${data.location}`,
+            detail: data.airport,
+            extra: data.code,
+        };
+    };
+
     $("#flight-to-selectpicker")
         .selectpicker({
             data: DATA.fromCities,
+            extractor: dataExtractor,
         })
         .change(onFlightCityChange);
 
     $("#flight-from-selectpicker")
         .selectpicker({
             data: DATA.fromCities,
+            extractor: dataExtractor,
         })
         .change(onFlightCityChange);
 
@@ -140,26 +152,5 @@ $(function () {
     $("#return-datepicker").datepicker({
         minDate: 0,
         onSelect: (date) => onDateChange(date, "return"),
-    });
-
-    $("[data-toggle-visible]").click(function (e) {
-        e.stopPropagation();
-        $(".picker-popup").hide();
-        const target = $(this).attr("data-toggle-visible");
-        $(`#${target}`).toggle();
-    });
-
-    $("[data-hide-visible]").click(function (e) {
-        e.stopPropagation();
-        const target = $(this).attr("data-hide-visible");
-        $(`#${target}`).hide();
-    });
-
-    $(".picker-popup").click(function (e) {
-        e.stopPropagation();
-    });
-
-    $(window).click(function () {
-        $(".picker-popup").hide();
     });
 });

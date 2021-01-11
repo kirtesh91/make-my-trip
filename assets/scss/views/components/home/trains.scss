@@ -1,0 +1,19 @@
+.booking-section.trains {
+    .input-box {
+        &.city-box {
+            flex: 5;
+        }
+
+        &.date-box {
+            flex: 2;
+        }
+
+        &.class-box {
+            flex: 2;
+
+            .hero-listpicker-group {
+                display: none;
+            }
+        }
+    }
+}

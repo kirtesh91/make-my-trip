@@ -3,6 +3,10 @@
     min-width: 0;
 }
 
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
 .d-none {
     display: none !important;
 }
@@ -40,10 +44,16 @@
     .ml-#{$name} {
         margin-left: $size;
     }
+    .mr-#{$name} {
+        margin-right: $size;
+    }
 }
 
 @each $name, $color in $colors {
-    .color-#{$name}-color {
+    .color-#{$name} {
+        color: $color;
+    }
+    .#{$name}-color {
         color: $color;
     }
 }

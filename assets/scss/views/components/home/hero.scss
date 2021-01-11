@@ -6,13 +6,23 @@
     );
 
     .booking-section {
-        padding: map-get($sizing, xxxl) 0 map-get($sizing, xxl) 0;
+        padding: map-get($sizing, xxxl) 0 96px 0;
 
         .booking-container {
             @include relative();
             padding: map-get($sizing, xl) map-get($sizing, base);
             background-color: white;
             border-radius: map-get($sizing-lg, sm);
+        }
+
+        button.search {
+            @include absolute(bottom 0 left 50%);
+            transform: translate(-50%, 50%);
+            @include font-size(20px);
+            width: 236px;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            @include poppins(600);
         }
 
         .booking-modes {
@@ -100,7 +110,8 @@
                         @include font-size(13px);
                     }
 
-                    p, span {
+                    p,
+                    span {
                         width: 100%;
                         overflow: hidden;
                         white-space: nowrap;
@@ -121,33 +132,17 @@
                             map-get($sizing-lg, sm) 0;
                     }
 
-                    &.city-box {
-                        flex: 4;
-
-                        .selectpicker {
-                            display: none;
-                            @include absolute(top map-get($sizing, xl) left 0);
-                            z-index: 2;
-                            width: 100%;
-                        }
-                    }
-                    &.date-box {
-                        flex: 2;
-                        .datepicker-container {
-                            display: none;
-                            z-index: 2;
-                            @include absolute(top map-get($sizing, xl) left 0);
-                        }
-                        &.return-date-box {
-                            .datepicker-container {
-                                left: unset;
-                                right: 0;
-                            }
-                        }
+                    .selectpicker {
+                        display: none;
+                        @include absolute(top map-get($sizing, xl) left 0);
+                        z-index: 2;
+                        width: 100%;
                     }
 
-                    &.travellers-box {
-                        flex: 3;
+                    .datepicker-container {
+                        display: none;
+                        z-index: 2;
+                        @include absolute(top map-get($sizing, xl) left 0);
                     }
 
                     &:hover {
@@ -161,6 +156,28 @@
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .hero-listpicker-group {
+        z-index: 2;
+        cursor: unset;
+        background-color: white;
+        @include absolute(top map-get($sizing, xl) right 0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: map-get($sizing-lg, xs);
+        padding: map-get($sizing-lg, sm) map-get($sizing-lg, base);
+
+        .section {
+            margin-bottom: map-get($sizing, sm);
+
+            .name {
+                @include font-size(12px);
+                text-transform: uppercase;
+                color: map-get($colors, midgray);
+                font-weight: 700;
+                margin-bottom: map-get($sizing-lg, sm);
             }
         }
     }

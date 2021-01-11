@@ -1,0 +1,25 @@
+.booking-section.flights {
+    .input-box {
+        &.city-box {
+            flex: 4;
+        }
+        &.date-box {
+            flex: 2;
+
+            &.return-date-box {
+                .datepicker-container {
+                    left: unset;
+                    right: 0;
+                }
+            }
+        }
+
+        &.travellers-box {
+            flex: 3;
+
+            .hero-listpicker-group {
+                display: none;
+            }
+        }
+    }
+}

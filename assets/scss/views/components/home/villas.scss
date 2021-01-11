@@ -1,0 +1,25 @@
+.booking-section.villas {
+    .input-box {
+        &.city-box {
+            flex: 5;
+        }
+        &.date-box {
+            flex: 1.5;
+
+            &.check-out-date-box {
+                .datepicker-container {
+                    left: unset;
+                    right: 0;
+                }
+            }
+        }
+
+        &.guests-box {
+            flex: 1.5;
+
+            .hero-listpicker-group {
+                display: none;
+            }
+        }
+    }
+}

@@ -7,7 +7,7 @@
             rel="stylesheet"
             href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
         />
-        <link rel="stylesheet" href="./assets/css/app.css" />
+        <link rel="stylesheet" href="../../assets/css/app.css" />
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <body>
@@ -16,7 +16,7 @@
                 <div class="container">
                     <a href="" class="brand">
                         <img
-                            src="assets/images/logo-white.png"
+                            src="../../assets/images/logo-white.png"
                             class="logo"
                             alt="MakeMyTrip"
                         />
@@ -31,57 +31,57 @@
                 </div>
             </nav>
             <div class="container">
-                <div class="booking-section">
+                <div class="booking-section flights">
                     <div class="booking-container">
                         <div class="booking-modes">
-                            <div class="option active">
+                            <a class="option active" href="./flights.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/flight.svg"
+                                    src="../../assets/icons/flight.svg"
                                     alt=""
                                 />
                                 <span>Flights</span>
-                            </div>
-                            <div class="option">
+                            </a>
+                            <a class="option" href="./hotels.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/hotel.svg"
+                                    src="../../assets/icons/hotel.svg"
                                     alt=""
                                 />
                                 <span>Hotels</span>
-                            </div>
-                            <div class="option">
+                            </a>
+                            <a class="option" href="./villas.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/mansion.svg"
+                                    src="../../assets/icons/mansion.svg"
                                     alt=""
                                 />
                                 <span>Villas & Apts</span>
-                            </div>
-                            <div class="option">
+                            </a>
+                            <a class="option" href="./trains.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/locomotive.svg"
+                                    src="../../assets/icons/locomotive.svg"
                                     alt=""
                                 />
                                 <span>Trains</span>
-                            </div>
-                            <div class="option">
+                            </a>
+                            <a class="option" href="./cabs.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/taxi.svg"
+                                    src="../../assets/icons/taxi.svg"
                                     alt=""
                                 />
                                 <span>Cabs</span>
-                            </div>
-                            <div class="option">
+                            </a>
+                            <a class="option" href="./buses.html">
                                 <img
                                     class="icon"
-                                    src="assets/icons/bus.svg"
+                                    src="../../assets/icons/bus.svg"
                                     alt=""
                                 />
                                 <span>Buses</span>
-                            </div>
+                            </a>
                         </div>
                         <div class="searcher">
                             <div class="content">
@@ -166,7 +166,7 @@
                                         Economy/Premium Economy
                                     </p>
                                     <div
-                                        class="travellers-picker picker-popup"
+                                        class="travellers-picker hero-listpicker-group picker-popup"
                                         id="travellers-picker"
                                     >
                                         <div class="section">
@@ -222,6 +222,9 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="search button round primary gradient">
+                            Search
+                        </button>
                     </div>
                 </div>
             </div>
@@ -236,10 +239,11 @@
             integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
             crossorigin="anonymous"
         ></script>
-        <script src="./assets/js/data.js"></script>
-        <script src="./assets/js/components/selectpicker.js"></script>
-        <script src="./assets/js/components/listpicker.js"></script>
-        <script src="./assets/js/utils.js"></script>
-        <script src="./assets/js/app.js"></script>
+        <script src="../../assets/js/data.js"></script>
+        <script src="../../assets/js/components/selectpicker.js"></script>
+        <script src="../../assets/js/components/listpicker.js"></script>
+        <script src="../../assets/js/utils.js"></script>
+        <script src="../../assets/js/home/flights.js"></script>
+        <script src="../../assets/js/home.js"></script>
     </body>
 </html>

@@ -4,6 +4,10 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     min-width: 316px;
 
+    &.limit-width {
+        max-width: 31px;
+    }
+
     input {
         padding: map-get($sizing-lg, sm);
         border: none;

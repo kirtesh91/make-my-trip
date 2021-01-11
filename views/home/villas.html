@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MakeMyTrip - Best Travel Booking Website</title>
+        <link
+            rel="stylesheet"
+            href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+        />
+        <link rel="stylesheet" href="../../assets/css/app.css" />
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <header class="hero">
+            <nav class="navigation transparent">
+                <div class="container">
+                    <a href="" class="brand">
+                        <img
+                            src="../../assets/images/logo-white.png"
+                            class="logo"
+                            alt="MakeMyTrip"
+                        />
+                    </a>
+                    <div class="nav-items">
+                        <a class="nav-item">Home</a>
+                        <a class="nav-item">About Us</a>
+                        <a class="nav-item">Packages</a>
+                        <a class="nav-item">Contact Us</a>
+                        <a class="nav-item">Register</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="booking-section villas">
+                    <div class="booking-container">
+                        <div class="booking-modes">
+                            <a class="option" href="./flights.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/flight.svg"
+                                    alt=""
+                                />
+                                <span>Flights</span>
+                            </a>
+                            <a class="option" href="./hotels.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/hotel.svg"
+                                    alt=""
+                                />
+                                <span>Hotels</span>
+                            </a>
+                            <a class="option active" href="./villas.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/mansion.svg"
+                                    alt=""
+                                />
+                                <span>Villas & Apts</span>
+                            </a>
+                            <a class="option" href="./trains.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/locomotive.svg"
+                                    alt=""
+                                />
+                                <span>Trains</span>
+                            </a>
+                            <a class="option" href="./cabs.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/taxi.svg"
+                                    alt=""
+                                />
+                                <span>Cabs</span>
+                            </a>
+                            <a class="option" href="./buses.html">
+                                <img
+                                    class="icon"
+                                    src="../../assets/icons/bus.svg"
+                                    alt=""
+                                />
+                                <span>Buses</span>
+                            </a>
+                        </div>
+                        <div class="searcher">
+                            <div class="content">
+                                <div
+                                    class="input-box city-box"
+                                    data-toggle-visible="villa-location-selectpicker"
+                                    id="villa-location"
+                                >
+                                    <span class="title"
+                                        >City / Hotel / Area / Building</span
+                                    >
+                                    <span class="value">Goa, India</span>
+                                    <p class="info">India</p>
+                                    <div
+                                        id="villa-location-selectpicker"
+                                        data-for="villa-location"
+                                        class="picker-popup limit-width"
+                                    ></div>
+                                </div>
+                                <div
+                                    class="input-box date-box"
+                                    data-toggle-visible="check-in-popup"
+                                >
+                                    <span class="title">Check-In</span>
+                                    <span class="value" id="check-in-date"
+                                        >2 <bdi>Jan, 21</bdi></span
+                                    >
+                                    <p class="info">Saturday</p>
+                                    <div
+                                        class="datepicker-container picker-popup"
+                                        id="check-in-popup"
+                                    >
+                                        <div id="check-in-datepicker"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="input-box date-box check-out-date-box"
+                                    data-toggle-visible="check-out-popup"
+                                >
+                                    <span class="title">Check-Out</span>
+                                    <span class="value" id="check-out-date">
+                                        3 <bdi>Jan, 21</bdi></span
+                                    >
+                                    <p class="info">Sunday</p>
+                                    <div
+                                        class="datepicker-container picker-popup"
+                                        id="check-out-popup"
+                                    >
+                                        <div id="check-out-datepicker"></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="input-box guests-box"
+                                    data-toggle-visible="guests-picker"
+                                >
+                                    <span class="title">Guests</span>
+                                    <span class="value">
+                                        <strong id="guests">1</strong>
+                                        <bdi>Guests</bdi>
+                                    </span>
+                                    <p class="info">&nbsp;</p>
+                                    <div
+                                        class="guests-picker hero-listpicker-group picker-popup"
+                                        id="guests-picker"
+                                    >
+                                        <div class="section">
+                                            <p class="name">ADULTS (12y +)</p>
+                                            <div
+                                                id="adults-listpicker"
+                                                data-for="adults"
+                                            ></div>
+                                        </div>
+                                        <div class="section">
+                                            <p class="name">
+                                                CHILDREN (Age 12y and Below)
+                                            </p>
+                                            <div
+                                                id="children-listpicker"
+                                                data-for="children"
+                                            ></div>
+                                        </div>
+                                        <div class="text-right">
+                                            <button
+                                                class="button primary round"
+                                                data-hide-visible="guests-picker"
+                                            >
+                                                Done
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="search button round primary gradient">
+                            Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"
+        ></script>
+        <script src="../../assets/js/data.js"></script>
+        <script src="../../assets/js/components/selectpicker.js"></script>
+        <script src="../../assets/js/components/listpicker.js"></script>
+        <script src="../../assets/js/utils.js"></script>
+        <script src="../../assets/js/home/villas.js"></script>
+        <script src="../../assets/js/home.js"></script>
+    </body>
+</html>

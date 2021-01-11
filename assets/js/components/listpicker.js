@@ -15,7 +15,7 @@
 
         const DOM = {
             option: (data) => {
-                if (data.active) selected = data.val;
+                if (data.active) selected = data;
                 return `<li data-value="${data.val}" ${
                     data.active ? "class='active'" : ""
                 }>${data.name}</li>`;
@@ -47,7 +47,8 @@
             );
 
             if (!_selected.length) return;
-            const previous = selected ? { ..._selected } : null;
+
+            const previous = selected ? { ...selected } : null;
             selected = _selected[0];
 
             $(self).trigger("change", {
