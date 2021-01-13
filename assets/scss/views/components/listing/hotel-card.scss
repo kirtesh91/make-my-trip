@@ -73,4 +73,21 @@
             @include poppins(700);
         }
     }
+
+    .features-group {
+        @include flex(flex-start);
+        flex-wrap: nowrap;
+        margin-top: map-get($sizing, sm);
+
+        .feature {
+            @include font-size(12px);
+            margin-right: map-get($sizing, sm);
+            white-space: nowrap;
+
+            i {
+                color: map-get($colors, "midgray");
+                margin-right: 4px;
+            }
+        }
+    }
 }

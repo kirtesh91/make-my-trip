@@ -1,0 +1,29 @@
+.listing-page.flights {
+    .content-list {
+        padding-bottom: 96px;
+    }
+    .flight-booking-container {
+        color: #fff;
+        background-color: rgba(48, 48, 48, 0.97);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        padding: map-get($sizing, sm) map-get($sizing, xl);
+        border-radius: map-get($sizing-lg, xs);
+        @include flex();
+        @include fixed(
+            bottom map-get($sizing, base) right map-get($sizing, lg)
+        );
+
+        .price {
+            @include poppins(700);
+            letter-spacing: 1px;
+            @include font-size(22px);
+            margin-right: map-get($sizing, sm);
+        }
+
+        button {
+            @include font-size(14px);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+}

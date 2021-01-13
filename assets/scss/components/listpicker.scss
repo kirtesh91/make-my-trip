@@ -25,6 +25,12 @@
         }
     }
 
+    &.vertical {
+        ul {
+            flex-direction: column;
+        }
+    }
+
     &.normal-active {
         li {
             &:hover,

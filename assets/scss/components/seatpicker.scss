@@ -1,0 +1,57 @@
+.seats-container {
+    @include flex(flex-start);
+
+    .seat-row {
+        @include flex-column();
+
+        span {
+            @include dimension(30px);
+            margin: 2.5px;
+
+            &.seat {
+                border-radius: 3px;
+                @include flex();
+                cursor: pointer;
+                font-weight: 600;
+                @include font-size(14px);
+
+                &.available {
+                    border: 1px solid rgba(map-get($colors, primary), 0.4);
+                    color: map-get($colors, primary);
+
+                    &.active {
+                        background-color: map-get($colors, primary);
+                    }
+                }
+
+                &.ladies {
+                    border: 1px solid rgba(#ff40bf, 0.4);
+                    color: #ff40bf;
+
+                    &.active {
+                        background-color: #ff40bf;
+                    }
+                }
+
+                &.blocked {
+                    border: 1px solid rgba(map-get($colors, danger), 0.4);
+                    color: map-get($colors, danger);
+                    pointer-events: none;
+                    cursor: not-allowed;
+                    background-color: rgba(map-get($colors, danger), 0.1);
+                }
+
+                &.unavailable {
+                    background-color: #f2f2f2;
+                    color: #d8d8d8;
+                    pointer-events: none;
+                    cursor: not-allowed;
+                }
+
+                &.active {
+                    color: white;
+                }
+            }
+        }
+    }
+}

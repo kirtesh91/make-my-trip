@@ -1,0 +1,167 @@
+.bus-card {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border-radius: map-get($sizing-lg, xs);
+    margin-bottom: map-get($sizing, sm);
+
+    .content {
+        @include flex(flex-start);
+        padding: map-get($sizing, sm) map-get($sizing, base);
+
+        .header {
+            position: relative;
+            padding: 0 map-get($sizing, sm) 0 map-get($sizing, lg);
+            .departure,
+            .arrival {
+                font-weight: 600;
+                @include font-size(20px);
+            }
+            .travel-time {
+                @include font-size(12px);
+                margin: map-get($sizing-lg, sm) 0;
+            }
+            .departure {
+                font-weight: 700;
+            }
+
+            .route {
+                @include absolute(left 0 top 50%);
+                width: 60px;
+                transform: translate(calc(-50% + 16px), -50%) rotate(90deg);
+                border-top: 1px dashed map-get($colors, "darkgray");
+
+                &::after,
+                &::before {
+                    content: "";
+                    @include absolute(bottom 0 right 0);
+                    transform: translateY(50%);
+                    @include dimension(8px);
+                    border-radius: 50%;
+                    border: 1px solid map-get($colors, "gray");
+                    background-color: map-get($colors, "white");
+                }
+
+                &::after {
+                    right: unset;
+                    left: 0;
+                }
+            }
+        }
+
+        .body {
+            padding: 0 map-get($sizing, sm);
+            flex: 1;
+
+            .title {
+                @include flex(flex-start);
+
+                .name {
+                    @include font-size(17px);
+                }
+
+                span {
+                    color: map-get($colors, "gray");
+                    margin: 0 map-get($sizing-lg, xs);
+                }
+
+                .bus-model {
+                    @include font-size(12px);
+                    color: map-get($colors, "darkgray");
+                }
+            }
+
+            .ratings-container {
+            }
+
+            .features-group {
+                @include flex(flex-start);
+                margin: map-get($sizing, sm) 0;
+                flex-wrap: nowrap;
+
+                .feature {
+                    @include font-size(12px);
+                    margin-right: map-get($sizing, sm);
+                    white-space: nowrap;
+
+                    i {
+                        color: map-get($colors, "gray");
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+
+        .footer {
+            @include flex-column(flex-end);
+            .pricing-details {
+                @include flex();
+
+                .pre-price {
+                    @include font-size(16px);
+                    color: map-get($colors, "danger");
+                    text-decoration: line-through;
+                    margin-right: map-get($sizing, xs);
+                }
+                .price {
+                    @include font-size(22px);
+                    font-weight: 600;
+                }
+            }
+
+            .availability {
+                @include font-size(14px);
+                @include flex(flex-start);
+                margin: map-get($sizing, xs) 0 map-get($sizing-lg, sm) 0;
+
+                i {
+                    color: map-get($colors, "gray");
+                    margin-right: map-get($sizing, xxs);
+                }
+            }
+
+            .seat-layout-toggler {
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .booking-options {
+        background-color: #fbfbfb;
+        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.06);
+        padding: map-get($sizing, sm) map-get($sizing, base);
+
+        .place-section {
+            margin-bottom: map-get($sizing, base);
+            .title {
+                @include font-size(16px);
+                color: map-get($colors, "midgray");
+                padding-bottom: map-get($sizing, sm);
+            }
+        }
+    }
+
+    .bus-layout {
+        @include flex(flex-start, stretch);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        border-radius: 32px 6px 6px 32px;
+        overflow: auto;
+        background-color: map-get($colors, "white");
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .driver-section {
+            padding: 12px;
+            border-right: 1px solid #eaeaea;
+            img {
+                @include dimension(64px);
+                transform: rotate(-90deg);
+            }
+        }
+
+        .seat-layout {
+            padding: map-get($sizing, sm);
+        }
+    }
+}

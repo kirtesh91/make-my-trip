@@ -95,6 +95,10 @@ form#ct101 {
   margin-top: 32px;
 }
 
+.section-pad {
+  padding-top: 32px;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -131,12 +135,20 @@ form#ct101 {
   margin-right: 24px;
 }
 
+.mt-base {
+  margin-top: 24px;
+}
+
 .ml-xxs {
   margin-left: 4px;
 }
 
 .mr-xxs {
   margin-right: 4px;
+}
+
+.mt-xxs {
+  margin-top: 4px;
 }
 
 .ml-xs {
@@ -147,12 +159,20 @@ form#ct101 {
   margin-right: 8px;
 }
 
+.mt-xs {
+  margin-top: 8px;
+}
+
 .ml-sm {
   margin-left: 16px;
 }
 
 .mr-sm {
   margin-right: 16px;
+}
+
+.mt-sm {
+  margin-top: 16px;
 }
 
 .ml-md {
@@ -163,12 +183,20 @@ form#ct101 {
   margin-right: 24px;
 }
 
+.mt-md {
+  margin-top: 24px;
+}
+
 .ml-lg {
   margin-left: 32px;
 }
 
 .mr-lg {
   margin-right: 32px;
+}
+
+.mt-lg {
+  margin-top: 32px;
 }
 
 .ml-xl {
@@ -179,6 +207,10 @@ form#ct101 {
   margin-right: 40px;
 }
 
+.mt-xl {
+  margin-top: 40px;
+}
+
 .ml-xxl {
   margin-left: 48px;
 }
@@ -187,12 +219,20 @@ form#ct101 {
   margin-right: 48px;
 }
 
+.mt-xxl {
+  margin-top: 48px;
+}
+
 .ml-xxxl {
   margin-left: 56px;
 }
 
 .mr-xxxl {
   margin-right: 56px;
+}
+
+.mt-xxxl {
+  margin-top: 56px;
 }
 
 .color-darkwhite {
@@ -291,6 +331,14 @@ form#ct101 {
   color: #051322;
 }
 
+.color-alert {
+  color: #f89d19;
+}
+
+.alert-color {
+  color: #f89d19;
+}
+
 .color-danger {
   color: #d0021b;
 }
@@ -301,6 +349,18 @@ form#ct101 {
 
 .text-right {
   text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.font-weight-600 {
+  font-weight: 600 !important;
+}
+
+.font-weight-700 {
+  font-weight: 700 !important;
 }
 
 /*!
@@ -5492,9 +5552,49 @@ form#ct101 {
   padding: 4px 8px;
   border-radius: 4px;
 }
+.badge.primary {
+  background-color: #008cff;
+  color: white;
+}
+.badge.primary.outline {
+  border: 1px solid rgba(0, 140, 255, 0.5);
+  color: #008cff;
+}
+.badge.primary.gradient {
+  background-image: linear-gradient(96deg, #53b2fe, #065af3);
+}
+.badge.alert {
+  background-color: #f89d19;
+  color: white;
+}
+.badge.alert.outline {
+  border: 1px solid rgba(248, 157, 25, 0.5);
+  color: #f89d19;
+}
+.badge.alert.gradient {
+  background-image: linear-gradient(270deg, #f89d19, #f3c852);
+}
+.badge.success {
+  background-color: #1db954;
+  color: white;
+}
+.badge.success.outline {
+  border: 1px solid rgba(29, 185, 84, 0.5);
+  color: #1db954;
+}
+.badge.success.gradient {
+  background-image: linear-gradient(61deg, #43e1a8, #219393);
+}
 .badge.danger {
   background-color: #d0021b;
   color: white;
+}
+.badge.danger.outline {
+  border: 1px solid rgba(208, 2, 27, 0.5);
+  color: #d0021b;
+}
+.badge.round {
+  border-radius: 24px;
 }
 
 .listpicker ul {
@@ -5519,6 +5619,9 @@ form#ct101 {
   background-color: #008cff;
   color: white;
   font-weight: 700;
+}
+.listpicker.vertical ul {
+  flex-direction: column;
 }
 .listpicker.normal-active li:hover, .listpicker.normal-active li.active {
   font-weight: normal;
@@ -5550,11 +5653,153 @@ form#ct101 {
   border: 1px solid rgba(208, 2, 27, 0.5);
   color: #d0021b;
 }
+.button.alert {
+  background-color: #f89d19;
+  color: white;
+}
+.button.alert.outline {
+  border: 1px solid rgba(248, 157, 25, 0.5);
+  color: #f89d19;
+}
+.button.alert.gradient {
+  background-image: linear-gradient(270deg, #f89d19, #f3c852);
+}
+.button.success {
+  background-color: #1db954;
+  color: white;
+}
+.button.success.outline {
+  border: 1px solid rgba(29, 185, 84, 0.5);
+  color: #1db954;
+}
+.button.success.gradient {
+  background-image: linear-gradient(61deg, #43e1a8, #219393);
+}
 .button.outline {
   background-color: #ffffff;
 }
 .button.round {
   border-radius: 24px;
+}
+
+.checkbox-input {
+  position: relative;
+  margin: 16px 0;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.checkbox-input input {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.checkbox-input label {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  margin-right: 8px;
+  display: block;
+  border-radius: 9px;
+  background-color: #f5f5f5;
+  transition: all 0.2s ease;
+  border: 1px solid #b3b3b3;
+}
+.checkbox-input label::after {
+  font-weight: 900;
+  content: "";
+  color: white;
+  opacity: 0;
+  transition: all 0.2s ease;
+  font-family: "Font Awesome 5 Free", sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5625rem;
+}
+.checkbox-input:hover {
+  color: #008cff;
+}
+.checkbox-input:hover label {
+  background-color: #b3b3b3;
+}
+.checkbox-input:hover label::after {
+  opacity: 1;
+}
+.checkbox-input input:checked ~ label {
+  border: 1px solid #008cff;
+  background-color: #008cff;
+}
+.checkbox-input input:checked ~ label::after {
+  opacity: 1;
+}
+
+.seats-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.seats-container .seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.seats-container .seat-row span {
+  width: 30px;
+  height: 30px;
+  margin: 2.5px;
+}
+.seats-container .seat-row span.seat {
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.seats-container .seat-row span.seat.available {
+  border: 1px solid rgba(0, 140, 255, 0.4);
+  color: #008cff;
+}
+.seats-container .seat-row span.seat.available.active {
+  background-color: #008cff;
+}
+.seats-container .seat-row span.seat.ladies {
+  border: 1px solid rgba(255, 64, 191, 0.4);
+  color: #ff40bf;
+}
+.seats-container .seat-row span.seat.ladies.active {
+  background-color: #ff40bf;
+}
+.seats-container .seat-row span.seat.blocked {
+  border: 1px solid rgba(208, 2, 27, 0.4);
+  color: #d0021b;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: rgba(208, 2, 27, 0.1);
+}
+.seats-container .seat-row span.seat.unavailable {
+  background-color: #f2f2f2;
+  color: #d8d8d8;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+.seats-container .seat-row span.seat.active {
+  color: white;
 }
 
 body.auth {
@@ -5913,6 +6158,40 @@ body.auth {
   display: none;
 }
 
+.listing-page.flights .content-list {
+  padding-bottom: 96px;
+}
+.listing-page.flights .flight-booking-container {
+  color: #fff;
+  background-color: rgba(48, 48, 48, 0.97);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px 40px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 32px;
+  bottom: 24px;
+  position: fixed;
+}
+.listing-page.flights .flight-booking-container .price {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: calc(1.2625rem + 0.15vw);
+  margin-right: 16px;
+}
+@media (min-width: 1200px) {
+  .listing-page.flights .flight-booking-container .price {
+    font-size: 1.375rem;
+  }
+}
+.listing-page.flights .flight-booking-container button {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 header.listing-header {
   min-height: 216px;
   position: relative;
@@ -5969,6 +6248,46 @@ header.listing-header .cover img {
   object-fit: cover;
   -o-object-position: center;
   -o-object-fit: cover;
+}
+
+.filters {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.filters::-webkit-scrollbar {
+  width: 3px;
+}
+.filters h2.title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 16px;
+}
+.filters .filter-section {
+  margin: 24px 0;
+  padding-right: 8px;
+}
+.filters .filter-section .subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #888888;
+  margin-bottom: 12px;
+}
+.filters .filter-section .title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  margin-bottom: 12px;
+  font-size: 0.9375rem;
+  color: #666666;
+}
+.filters .checkbox-input span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hotel-card {
@@ -6056,6 +6375,404 @@ header.listing-header .cover img {
   .hotel-card .pricing-details .price {
     font-size: 1.5rem;
   }
+}
+.hotel-card .features-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-top: 16px;
+}
+.hotel-card .features-group .feature {
+  font-size: 0.75rem;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.hotel-card .features-group .feature i {
+  color: #888888;
+  margin-right: 4px;
+}
+
+.flight-card {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  max-width: 624px;
+  cursor: pointer;
+}
+.flight-card .header {
+  padding: 16px 16px 16px 16px;
+  border-bottom: 1px solid #eaeaea;
+}
+.flight-card .header .title {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #888888;
+}
+.flight-card .body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+}
+.flight-card .logo-container .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 24px;
+}
+.flight-card .departure,
+.flight-card .arrival,
+.flight-card .details,
+.flight-card .pricing {
+  flex: 1;
+  padding: 0 8px;
+}
+.flight-card .departure,
+.flight-card .arrival {
+  text-align: center;
+}
+.flight-card .departure .timing,
+.flight-card .arrival .timing {
+  font-size: calc(1.25625rem + 0.075vw);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+@media (min-width: 1200px) {
+  .flight-card .departure .timing,
+.flight-card .arrival .timing {
+    font-size: 1.3125rem;
+  }
+}
+.flight-card .departure .location,
+.flight-card .arrival .location {
+  font-size: 0.625rem;
+}
+.flight-card .details {
+  font-size: 0.625rem;
+  text-align: center;
+}
+.flight-card .details .time-span {
+  font-size: 0.75rem;
+}
+.flight-card .details hr {
+  margin: 8px auto;
+  background-color: #b3b3b3;
+  width: 96px;
+  height: 0.5px;
+  border: none;
+}
+.flight-card .pricing {
+  text-align: right;
+}
+.flight-card .pricing .price {
+  font-size: 1.125rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+.flight-card.selected {
+  background-color: rgba(0, 140, 255, 0.07);
+  border: 1px solid rgba(0, 140, 255, 0.2);
+}
+.flight-card.selected .header {
+  border-bottom-color: rgba(0, 140, 255, 0.15);
+}
+.flight-card.selected .header .title {
+  color: #000000;
+}
+
+.train-card {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+.train-card .body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+}
+.train-card .body .departure,
+.train-card .body .arrival,
+.train-card .body .general-details {
+  flex: 2;
+  padding: 0 8px;
+}
+.train-card .body .time-details {
+  flex: 1;
+}
+.train-card .body .general-details .name {
+  line-height: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.train-card .body .general-details .train-code {
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 20px;
+}
+.train-card .body .general-details .departs {
+  font-size: 0.8125rem;
+  line-height: 16px;
+}
+.train-card .body .general-details .departs span {
+  color: #008cff;
+}
+.train-card .body .general-details .departs span.inactive {
+  color: #666666;
+}
+.train-card .body .departure,
+.train-card .body .arrival {
+  text-align: center;
+}
+.train-card .body .departure .timing,
+.train-card .body .arrival .timing {
+  line-height: 24px;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.train-card .body .departure .timing bdi,
+.train-card .body .arrival .timing bdi {
+  font-size: 0.75rem;
+}
+.train-card .body .departure .location-code,
+.train-card .body .arrival .location-code {
+  margin: 8px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 20px;
+}
+.train-card .body .departure .location,
+.train-card .body .arrival .location {
+  font-size: 0.75rem;
+  line-height: 16px;
+  color: #666666;
+}
+.train-card .body .time-details {
+  text-align: center;
+}
+.train-card .class-options {
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fbfbfb;
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.06);
+  padding: 24px 16px;
+}
+.train-card .class-options::-webkit-scrollbar {
+  height: 3px;
+}
+.train-card .class-options .class {
+  background-color: #ffffff;
+  margin: 0 16px;
+  min-width: 192px;
+  min-height: 120px;
+  width: 212px;
+  height: 124px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  cursor: pointer;
+}
+.train-card .class-options .class .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.train-card .class-options .class .head .name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.train-card .class-options .class .head .badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+.train-card .class-options .class .status {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin: 8px 0;
+}
+.train-card .class-options .class .updated-time {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+.bus-card {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.bus-card .content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 24px;
+}
+.bus-card .content .header {
+  position: relative;
+  padding: 0 16px 0 32px;
+}
+.bus-card .content .header .departure,
+.bus-card .content .header .arrival {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.bus-card .content .header .travel-time {
+  font-size: 0.75rem;
+  margin: 12px 0;
+}
+.bus-card .content .header .departure {
+  font-weight: 700;
+}
+.bus-card .content .header .route {
+  top: 50%;
+  left: 0;
+  position: absolute;
+  width: 60px;
+  transform: translate(calc(-50% + 16px), -50%) rotate(90deg);
+  border-top: 1px dashed #666666;
+}
+.bus-card .content .header .route::after, .bus-card .content .header .route::before {
+  content: "";
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: translateY(50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #b3b3b3;
+  background-color: #ffffff;
+}
+.bus-card .content .header .route::after {
+  right: unset;
+  left: 0;
+}
+.bus-card .content .body {
+  padding: 0 16px;
+  flex: 1;
+}
+.bus-card .content .body .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bus-card .content .body .title .name {
+  font-size: 1.0625rem;
+}
+.bus-card .content .body .title span {
+  color: #b3b3b3;
+  margin: 0 6px;
+}
+.bus-card .content .body .title .bus-model {
+  font-size: 0.75rem;
+  color: #666666;
+}
+.bus-card .content .body .features-group {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 16px 0;
+  flex-wrap: nowrap;
+}
+.bus-card .content .body .features-group .feature {
+  font-size: 0.75rem;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.bus-card .content .body .features-group .feature i {
+  color: #b3b3b3;
+  margin-right: 4px;
+}
+.bus-card .content .footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+.bus-card .content .footer .pricing-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bus-card .content .footer .pricing-details .pre-price {
+  font-size: 1rem;
+  color: #d0021b;
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+.bus-card .content .footer .pricing-details .price {
+  font-size: calc(1.2625rem + 0.15vw);
+  font-weight: 600;
+}
+@media (min-width: 1200px) {
+  .bus-card .content .footer .pricing-details .price {
+    font-size: 1.375rem;
+  }
+}
+.bus-card .content .footer .availability {
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 8px 0 12px 0;
+}
+.bus-card .content .footer .availability i {
+  color: #b3b3b3;
+  margin-right: 4px;
+}
+.bus-card .content .footer .seat-layout-toggler {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.bus-card .booking-options {
+  background-color: #fbfbfb;
+  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.06);
+  padding: 16px 24px;
+}
+.bus-card .booking-options .place-section {
+  margin-bottom: 24px;
+}
+.bus-card .booking-options .place-section .title {
+  font-size: 1rem;
+  color: #888888;
+  padding-bottom: 16px;
+}
+.bus-card .bus-layout {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 32px 6px 6px 32px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+.bus-card .bus-layout::-webkit-scrollbar {
+  height: 4px;
+}
+.bus-card .bus-layout .driver-section {
+  padding: 12px;
+  border-right: 1px solid #eaeaea;
+}
+.bus-card .bus-layout .driver-section img {
+  width: 64px;
+  height: 64px;
+  transform: rotate(-90deg);
+}
+.bus-card .bus-layout .seat-layout {
+  padding: 16px;
+}
+
+.content-list {
+  padding-bottom: 32px;
 }
 
 /*# sourceMappingURL=app.css.map */

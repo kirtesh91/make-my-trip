@@ -1,0 +1,130 @@
+.train-card {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border-radius: map-get($sizing-lg, xs);
+    margin-bottom: map-get($sizing, base);
+
+    .body {
+        @include flex(flex-start);
+        padding: map-get($sizing, sm);
+
+        .departure,
+        .arrival,
+        .general-details {
+            flex: 2;
+            padding: 0 map-get($sizing, xs);
+        }
+
+        .time-details {
+            flex: 1;
+        }
+
+        .general-details {
+            .name {
+                line-height: 24px;
+                @include poppins(700);
+                @include font-size(20px);
+            }
+
+            .train-code {
+                margin: map-get($sizing, xs) 0;
+                font-weight: 600;
+                @include font-size(16px);
+                line-height: 20px;
+            }
+
+            .departs {
+                @include font-size(13px);
+                line-height: 16px;
+
+                span {
+                    color: map-get($colors, primary);
+                    &.inactive {
+                        color: map-get($colors, "darkgray");
+                    }
+                }
+            }
+        }
+
+        .departure,
+        .arrival {
+            text-align: center;
+            .timing {
+                line-height: 24px;
+                font-weight: 600;
+                @include font-size(20px);
+
+                bdi {
+                    @include font-size(12px);
+                }
+            }
+
+            .location-code {
+                margin: map-get($sizing, xs) 0;
+                font-weight: 600;
+                @include font-size(16px);
+                line-height: 20px;
+            }
+            .location {
+                @include font-size(12px);
+                line-height: 16px;
+                color: map-get($colors, "darkgray");
+            }
+        }
+
+        .time-details {
+            text-align: center;
+        }
+    }
+
+    .class-options {
+        overflow-y: auto;
+        @include flex(flex-start);
+        background-color: #fbfbfb;
+        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.06);
+        padding: map-get($sizing, base) map-get($sizing, sm);
+
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
+
+        .class {
+            background-color: map-get($colors, "white");
+            margin: 0 map-get($sizing, sm);
+            min-width: 192px;
+            min-height: 120px;
+            @include dimension(212px, 124px);
+            border-radius: 4px;
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+            padding: map-get($sizing, sm);
+            cursor: pointer;
+
+            .head {
+                @include flex(space-between);
+                @include font-size(16px);
+                font-weight: 700;
+
+                .name {
+                    @include flex();
+                }
+
+                .badge {
+                    margin-left: 8px;
+                    padding: 2px 8px;
+                    @include font-size(8px);
+                    text-transform: uppercase;
+                }
+            }
+
+            .status {
+                font-weight: 600;
+                @include font-size(14px);
+                margin: map-get($sizing, xs) 0;
+            }
+
+            .updated-time {
+                @include font-size(12px);
+                color: map-get($colors, "midgray");
+            }
+        }
+    }
+}

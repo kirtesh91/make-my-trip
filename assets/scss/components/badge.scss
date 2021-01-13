@@ -14,8 +14,63 @@
     padding: 4px 8px;
     border-radius: 4px;
 
+    &.primary {
+        background-color: map-get($colors, primary);
+        color: white;
+
+        &.outline {
+            border: 1px solid rgba(map-get($colors, primary), 0.5);
+            color: map-get($colors, primary);
+        }
+
+        &.gradient {
+            background-image: linear-gradient(96deg, #53b2fe, #065af3);
+        }
+    }
+
+    &.alert {
+        background-color: map-get($colors, alert);
+        color: white;
+
+        &.outline {
+            border: 1px solid rgba(map-get($colors, alert), 0.5);
+            color: map-get($colors, alert);
+        }
+
+        &.gradient {
+            background-image: linear-gradient(270deg, #f89d19, #f3c852);
+        }
+    }
+
+    &.success {
+        background-color: map-get($colors, success);
+        color: white;
+
+        &.outline {
+            border: 1px solid rgba(map-get($colors, success), 0.5);
+            color: map-get($colors, success);
+        }
+
+        &.gradient {
+            background-image: linear-gradient(
+                61deg,
+                rgb(67, 225, 168),
+                rgb(33, 147, 147)
+            );
+        }
+    }
+
     &.danger {
         background-color: map-get($colors, danger);
         color: white;
+
+        &.outline {
+            border: 1px solid rgba(map-get($colors, danger), 0.5);
+            color: map-get($colors, danger);
+        }
+    }
+
+    &.round {
+        border-radius: 24px;
     }
 }

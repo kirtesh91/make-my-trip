@@ -1,0 +1,59 @@
+.checkbox-input {
+    position: relative;
+    margin: map-get($sizing, sm) 0;
+    @include font-size(14px);
+    @include flex(flex-start);
+
+    input {
+        @include absolute(top 0 left 0 bottom 0 right 0);
+        @include dimension(100%);
+        cursor: pointer;
+        opacity: 0;
+    }
+
+    label {
+        @include dimension(18px);
+        position: relative;
+        margin-right: map-get($sizing, xs);
+        display: block;
+        border-radius: 9px;
+        background-color: #f5f5f5;
+        @include transition();
+        border: 1px solid map-get($colors, "gray");
+
+        &::after {
+            font-weight: 900;
+            content: "\f00c";
+            color: white;
+            opacity: 0;
+            @include transition();
+            font-family: "Font Awesome 5 Free", sans-serif;
+            @include absolute(top 0 left 0 bottom 0 right 0);
+            @include flex();
+            @include font-size(9px);
+        }
+    }
+
+    &:hover {
+        color: map-get($colors, primary);
+
+        label {
+            background-color: map-get($colors, "gray");
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    input:checked {
+        ~ label {
+            border: 1px solid map-get($colors, primary);
+            background-color: map-get($colors, primary);
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}

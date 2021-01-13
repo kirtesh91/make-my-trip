@@ -18,6 +18,9 @@
 .section-gap {
     margin-top: map-get($sizing, lg);
 }
+.section-pad {
+    padding-top: map-get($sizing, lg);
+}
 
 .uppercase {
     text-transform: uppercase;
@@ -47,6 +50,9 @@
     .mr-#{$name} {
         margin-right: $size;
     }
+    .mt-#{$name} {
+        margin-top: $size;
+    }
 }
 
 @each $name, $color in $colors {
@@ -60,4 +66,16 @@
 
 .text-right {
     text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.font-weight-600 {
+    font-weight: 600 !important;
+}
+
+.font-weight-700 {
+    font-weight: 700 !important;
 }

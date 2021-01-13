@@ -1,0 +1,91 @@
+.flight-card {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border-radius: map-get($sizing-lg, xs);
+    margin-bottom: map-get($sizing, sm);
+    max-width: 624px;
+    cursor: pointer;
+
+    .header {
+        padding: map-get($sizing, sm) map-get($sizing, sm) map-get($sizing, sm)
+            map-get($sizing, sm);
+        border-bottom: 1px solid #eaeaea;
+
+        .title {
+            text-align: center;
+            @include font-size(12px);
+            font-weight: 500;
+            color: map-get($colors, "midgray");
+        }
+    }
+
+    .body {
+        @include flex(flex-start);
+        padding: map-get($sizing, sm);
+    }
+
+    .logo-container {
+        .logo {
+            @include dimension(36px);
+            border-radius: 24px;
+        }
+    }
+
+    .departure,
+    .arrival,
+    .details,
+    .pricing {
+        flex: 1;
+        padding: 0 map-get($sizing, xs);
+    }
+
+    .departure,
+    .arrival {
+        text-align: center;
+        .timing {
+            @include font-size(21px);
+            font-weight: 700;
+            margin-bottom: map-get($sizing, xxs);
+        }
+        .location {
+            @include font-size(10px);
+        }
+    }
+
+    .details {
+        @include font-size(10px);
+        text-align: center;
+        .time-span {
+            @include font-size(12px);
+        }
+
+        hr {
+            margin: map-get($sizing, xs) auto;
+            background-color: map-get($colors, "gray");
+            width: 96px;
+            height: 0.5px;
+            border: none;
+        }
+    }
+
+    .pricing {
+        text-align: right;
+
+        .price {
+            @include font-size(18px);
+            @include poppins(700);
+        }
+    }
+
+    &.selected {
+        background-color: rgba(map-get($colors, primary), 0.07);
+        border: 1px solid rgba(map-get($colors, primary), 0.2);
+
+        .header {
+            border-bottom-color: rgba(map-get($colors, primary), 0.15);
+
+            .title {
+                color: map-get($colors, "black");
+            }
+        }
+    }
+}

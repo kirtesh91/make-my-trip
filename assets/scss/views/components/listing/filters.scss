@@ -1,0 +1,44 @@
+.filters {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    h2.title {
+        font-weight: 600;
+        @include font-size(18px);
+        margin-bottom: map-get($sizing, sm);
+    }
+
+    .filter-section {
+        margin: map-get($sizing, base) 0;
+        padding-right: map-get($sizing, xs);
+
+        .subtitle {
+            @include poppins(400);
+            @include font-size(14px);
+            color: map-get($colors, "midgray");
+            margin-bottom: map-get($sizing-lg, sm);
+        }
+
+        .title {
+            @include poppins(500);
+            margin-bottom: map-get($sizing-lg, sm);
+            @include font-size(15px);
+            color: map-get($colors, "darkgray");
+        }
+    }
+
+    .checkbox-input {
+        span {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

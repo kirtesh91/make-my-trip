@@ -1,1 +1,8 @@
-@import "components/listing/header", "components/listing/hotel-card";
+@import "components/listing/flights", "components/listing/header",
+    "components/listing/filters", "components/listing/hotel-card",
+    "components/listing/flight-card", "components/listing/train-card",
+    "components/listing/bus-card";
+
+.content-list {
+    padding-bottom: map-get($sizing, lg);
+}
